@@ -17,6 +17,6 @@ Route::get('/', function () {
 
 Route::get('/binar', 'BinarController@getBinar');
 Route::post('/binar/create-cell', 'BinarController@createCell');
-Route::get('/binar/cell/delete/{id}', 'BinarController@deleteCell');
+Route::post('/binar/cell/delete', 'BinarController@deleteCell');
 Route::get('/binar/get-cell-by-id/{id}', 'BinarController@getCellById');
 Route::get('/binar/fill-in-binar', 'BinarController@fillInBinar');

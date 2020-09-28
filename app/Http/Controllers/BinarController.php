@@ -42,7 +42,8 @@ class BinarController extends Controller
     }
 
 
-    public function createCell(Request $request) {   
+    public function createCell(Request $request)
+    {   
         $this->validate(request(), [
             'position' => 'required|regex:([1-2])',
         ]);
@@ -57,16 +58,19 @@ class BinarController extends Controller
         }
         
     }
-    public function deleteCell($id)
+    public function deleteCell(Request $request) 
     {      
-            
-            $cell = Binar::where('id', '=', $id)->get()->toArray();
+            $data = $request->all();
+            // var_dump($data);
+            // die();
+            $cell = Binar::where('id', '=', $data['id'])->get()->toArray();
             if($cell){                
                 try {                
                     $delete = Binar::where('path', 'like', $cell[0]['path'] . '%')->delete();
                 } catch (\Throwable $th) {
                     return $th;
-                }               
+                }                               
+               
                 return redirect()->action('BinarController@getBinar');         
 
             }else{

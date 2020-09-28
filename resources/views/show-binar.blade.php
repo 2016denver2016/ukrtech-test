@@ -19,7 +19,7 @@
                     foreach($binar as $key => $value){
                         if($i > 0){
                             echo'<div class ="level'.$value['level'].'">'.$value['path'].'
-                            <a type="button" href="/binar/cell/delete/'.$value['id'].'" class="btn-delete btn btn-link">delete</a>
+                            <a type="button" data-id="'.$value['id'].'" class="btn-delete btn btn-link">delete</a>
                             <a type="button" href="/binar/get-cell-by-id/'.$value['id'].'" >get cell by id</a></div>';
                             
                         }else{

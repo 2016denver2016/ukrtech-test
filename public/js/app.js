@@ -1,22 +1,23 @@
 $(document).ready(function () {
 
-    // $('.btn-delete').on('click', function (e) {
-    //     e.preventDefault()
-    //     // let idFromParent = $(this).parents('#tmplt-lang')
-    //     let parent_id = 4//idFromParent.length ? idFromParent.attr('data-template-id') : $('#tmplt-duplicate').attr('data-template-id')
-    //     let position = 2//$(this).attr('data-template-lang')
+    $('.btn-delete').on('click', function (e) {
+        e.preventDefault()
 
-    //     $.ajax({
-    //         url: '/binar/create-cell',
-    //         type: 'POST',
-    //         data: { parent_id, position },
-    //         success: res => {
-    //             // console.log(${res} );
-    //             // let obj = JSON.parse(res);
-    //             // location.replace(`/${obj.country}/${obj.lang}/templates/edit?id=${obj.id}`)
-    //         },
-    //     });
-    // })
+        let id = $(this).attr("data-id");
+
+        console.log(id);
+
+        $.ajax({
+            url: '/binar/cell/delete',
+            type: 'POST',
+            data: { id },
+            success: res => {
+                // console.log(${res} );
+                // let obj = JSON.parse(res);
+                location.replace(`/binar`)
+            },
+        });
+    })
 
     
     $("#myForm").submit(function () {

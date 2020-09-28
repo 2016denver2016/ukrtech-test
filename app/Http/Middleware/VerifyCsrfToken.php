@@ -19,6 +19,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        '/binar/create-cell'
+        '/binar/create-cell',
+        '/binar/cell/delete'
     ];
 }
