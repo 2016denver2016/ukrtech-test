@@ -66,8 +66,7 @@ class BinarController extends Controller
                     $delete = Binar::where('path', 'like', $cell[0]['path'] . '%')->delete();
                 } catch (\Throwable $th) {
                     return $th;
-                }                               
-               
+                }               
                 return redirect()->action('BinarController@getBinar');         
 
             }else{

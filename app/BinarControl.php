@@ -57,8 +57,7 @@ class BinarControl extends Binar
                         'pid' => $value['parent_id'],
                         'level' => $value ['level'],
                         'path' => $value['path']
-                    );
-                    //echo'<div class ="level'.$value['level'].'">'.$value['path'].'</div>';
+                    );                   
                     unset($binar[$key]);
                     $children = createtree($binar, $value['id']);
                     if (count($children) > 0) {
